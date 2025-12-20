@@ -191,13 +191,83 @@ export default function InteractiveSectionsRow() {
                         <div className="p-8 overflow-y-auto max-h-[calc(90vh-80px)]">
                             {/* TOOLS CONTENT */}
                             {activeModal === 'tools' && (
-                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                    {tools.map((tool) => (
-                                        <div key={tool.name} className="flex flex-col items-center justify-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-zinc-300 hover:bg-white transition-all hover:shadow-sm group">
-                                            <span className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-200">{tool.icon}</span>
-                                            <span className="text-sm font-medium text-zinc-900">{tool.name}</span>
+                                <div className="space-y-12">
+                                    {/* 01 WORKSTATION */}
+                                    <section>
+                                        <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-6 ml-1">01 Workstation</h3>
+                                        <div className="bg-zinc-50 rounded-3xl p-6 md:p-8 border border-zinc-100 flex flex-col md:flex-row gap-8 items-center group hover:border-zinc-200 transition-colors">
+                                            {/* Laptop Visual Placeholder */}
+                                            <div className="w-full md:w-1/2 aspect-[16/10] bg-gradient-to-br from-zinc-200 via-zinc-300 to-zinc-400 rounded-2xl relative shadow-inner overflow-hidden flex items-center justify-center">
+                                                <div className="absolute inset-[3px] bg-black rounded-xl flex items-center justify-center overflow-hidden">
+                                                    {/* Screen Content */}
+                                                    <div className="w-full h-full bg-gradient-to-br from-blue-900 via-zinc-900 to-black opacity-80 flex flex-col items-center justify-center p-4">
+                                                        <div className="w-12 h-12 rounded-full bg-blue-500/20 blur-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                                                        <span className="relative z-10 text-zinc-200 font-mono text-xs tracking-widest opacity-50">HP OMNIBOOK X</span>
+                                                    </div>
+                                                </div>
+                                                {/* Reflection */}
+                                                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/10 to-transparent pointer-events-none"></div>
+                                            </div>
+
+                                            {/* Laptop Details */}
+                                            <div className="space-y-6 w-full md:w-1/2">
+                                                <div>
+                                                    <h4 className="text-2xl font-bold text-zinc-900 mb-2">HP Omnibook X Flip</h4>
+                                                    <p className="text-zinc-500 text-sm">My daily driver for everything from heavy compilation to creative work.</p>
+                                                </div>
+
+                                                <div className="flex flex-wrap gap-2">
+                                                    <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">14" 2.8K OLED</span>
+                                                    <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">Snapdragon X Elite</span>
+                                                    <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">16GB RAM</span>
+                                                    <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">1TB SSD</span>
+                                                </div>
+
+                                                <div className="pt-2 border-t border-zinc-200/50">
+                                                    <div className="flex items-center gap-2 text-xs text-zinc-500">
+                                                        <span className="w-2 h-2 rounded-full bg-zinc-400"></span>
+                                                        <span className="font-medium">Meteor Silver Finish</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    ))}
+                                    </section>
+
+                                    {/* 02 DEVELOPMENT */}
+                                    <section>
+                                        <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-6 ml-1">02 Development</h3>
+                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                            {[
+                                                { name: 'IntelliJ IDEA', icon: '☕', url: 'https://www.jetbrains.com/idea/', category: 'Core' },
+                                                { name: 'VS Code', icon: '💻', url: 'https://code.visualstudio.com/', category: 'Core' },
+                                                { name: 'Windows Terminal', icon: '⌨️', url: 'https://github.com/microsoft/terminal', category: 'Core' },
+                                                { name: 'Docker', icon: '🐳', url: 'https://www.docker.com/', category: 'DevOps' },
+                                                { name: 'Postman', icon: '🚀', url: 'https://www.postman.com/', category: 'Testing' },
+                                                { name: 'DBeaver', icon: '🗄️', url: 'https://dbeaver.io/', category: 'Database' },
+                                                { name: 'Windsurf', icon: '🌊', url: 'https://windsurf.ai/', category: 'AI' },
+                                                { name: 'Cursor', icon: '🖱️', url: 'https://cursor.sh/', category: 'AI' },
+                                                { name: 'Google Antigravity', icon: '🌌', url: '#', category: 'AI' },
+                                                { name: 'Code Rabbit', icon: '🐰', url: 'https://coderabbit.ai/', category: 'AI' },
+                                                { name: 'Linear', icon: '📅', url: 'https://linear.app/', category: 'Productivity' },
+                                                { name: 'Notion', icon: '📝', url: 'https://www.notion.so/', category: 'Productivity' },
+                                                { name: 'Arc', icon: '🌐', url: 'https://arc.net/', category: 'Browser' },
+                                                { name: 'Spotify', icon: '🎵', url: 'https://open.spotify.com/', category: 'Music' },
+                                                { name: 'ChatGPT', icon: '🤖', url: 'https://chat.openai.com', category: 'AIRef' },
+                                                { name: 'Claude', icon: '🧠', url: 'https://claude.ai', category: 'AIRef' },
+                                            ].map((tool) => (
+                                                <a
+                                                    key={tool.name}
+                                                    href={tool.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex flex-col items-center justify-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-zinc-300 hover:bg-white transition-all hover:shadow-md group h-32"
+                                                >
+                                                    <span className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-200 filter grayscale group-hover:grayscale-0">{tool.icon}</span>
+                                                    <span className="text-xs font-semibold text-zinc-700 group-hover:text-zinc-900">{tool.name}</span>
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </section>
                                 </div>
                             )}
 
