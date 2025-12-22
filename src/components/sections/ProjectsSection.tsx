@@ -39,26 +39,26 @@ export default function ProjectsSection() {
                 {projects.map((project) => (
                     <div
                         key={project.title}
-                        className="rounded-2xl border border-zinc-200 p-5 bg-white hover:bg-zinc-50 transition-colors"
+                        className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors"
                     >
                         <div className="mb-3">
-                            <span className="inline-block rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-700 mb-3">
+                            <span className="inline-block rounded-full border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3 py-1 text-xs text-zinc-700 dark:text-zinc-300 mb-3">
                                 {project.tag}
                             </span>
-                            <h3 className="text-lg font-semibold text-zinc-900">
+                            <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
                                 {project.title}
                             </h3>
                         </div>
 
-                        <p className="text-zinc-600 mb-4 text-sm">
+                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 text-sm">
                             {project.description}
                         </p>
 
                         <div className="flex gap-3">
-                            <button className="px-4 py-2 text-sm font-medium text-zinc-900 bg-white border border-zinc-300 rounded-lg hover:bg-zinc-50 transition-colors">
+                            <button className="px-4 py-2 text-sm font-medium text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
                                 Details (soon)
                             </button>
-                            <button className="px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">
+                            <button className="px-4 py-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
                                 GitHub (soon)
                             </button>
                         </div>

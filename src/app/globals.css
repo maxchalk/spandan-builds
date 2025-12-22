@@ -1,13 +1,42 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-zinc-950: #09090b;
+}
 
 /* Smooth scrolling for anchor navigation */
 html {
   scroll-behavior: smooth;
 }
 
-/* Respect user's motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+@layer base {
+  body {
+    @apply bg-white text-zinc-900 transition-colors duration-300;
   }
+
+  .dark body {
+    @apply bg-zinc-950 text-zinc-50;
+  }
+
+  /* Global Heading and Paragraph defaults for dark mode */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply dark:text-zinc-100 transition-colors;
+  }
+
+  p,
+  span,
+  label {
+    @apply dark:text-zinc-400 transition-colors;
+  }
+}
+
+/* Ensure smooth transitions for all themed elements */
+* {
+  @apply transition-colors duration-300 border-zinc-200 dark:border-zinc-800;
 }

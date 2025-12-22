@@ -99,10 +99,10 @@ export default function SkillsSection() {
                             {group.skills.map((skill) => (
                                 <div
                                     key={skill.name}
-                                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-200 bg-white hover:border-zinc-300 hover:shadow-sm transition-all group"
+                                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm transition-all group"
                                 >
                                     <span className="text-lg transition-transform group-hover:scale-110">{skill.icon}</span>
-                                    <span className="text-sm font-medium text-zinc-700">{skill.name}</span>
+                                    <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{skill.name}</span>
                                 </div>
                             ))}
                         </div>
