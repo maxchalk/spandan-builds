@@ -75,9 +75,9 @@ export default function InteractiveSectionsRow() {
                 {/* Tools Card */}
                 <div
                     onClick={() => setActiveModal('tools')}
-                    className="group cursor-pointer rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 hover:shadow-lg transition-all hover:border-zinc-300 dark:hover:border-zinc-700 relative overflow-hidden"
+                    className="group cursor-pointer rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 hover:shadow-lg transition-all hover:border-zinc-300 dark:hover:border-zinc-700 relative overflow-hidden flex flex-col justify-center items-center h-full gap-8"
                 >
-                    <div className="mb-8 flex justify-center gap-4">
+                    <div className="flex justify-center gap-4">
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 flex items-center justify-center text-3xl shadow-sm rotate-3 group-hover:rotate-6 transition-transform">
                             🌊
                         </div>
@@ -99,20 +99,16 @@ export default function InteractiveSectionsRow() {
                 {/* Guestbook Card */}
                 <div
                     onClick={() => setActiveModal('guestbook')}
-                    className="group cursor-pointer rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 hover:shadow-lg transition-all hover:border-zinc-300 dark:hover:border-zinc-700 relative overflow-hidden"
+                    className="group cursor-pointer rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 hover:shadow-lg transition-all hover:border-zinc-300 dark:hover:border-zinc-700 relative overflow-hidden flex flex-col justify-center items-center h-full gap-8"
                 >
-                    <div className="mb-8 relative flex justify-center items-center h-20">
-                        {/* Stacked Cards Effect */}
-                        <div className="absolute w-32 h-20 bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 transform -rotate-12 translate-y-1"></div>
-                        <div className="absolute w-32 h-20 bg-zinc-50 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 transform rotate-12 translate-y-1"></div>
-
-                        {/* Main Preview Card */}
-                        <div className="relative w-40 h-24 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl shadow-md transform group-hover:-translate-y-1 transition-transform flex items-center justify-center p-3">
-                            <div className="w-full h-full border-2 border-white/20 rounded-lg flex flex-col justify-between p-2">
-                                <div className="w-8 h-1 bg-white/30 rounded-full"></div>
+                    <div className="flex justify-center gap-4 py-2">
+                        {/* Guestbook Card Visual Equivalent to Tools/Music */}
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 shadow-md flex items-center justify-center transform group-hover:-translate-y-1 transition-transform">
+                            <div className="w-full h-full border-2 border-white/20 rounded-xl flex flex-col justify-between p-3">
+                                <div className="w-8 h-1 bg-white/40 rounded-full"></div>
                                 <div className="space-y-1">
-                                    <div className="w-full h-1 bg-white/30 rounded-full"></div>
-                                    <div className="w-2/3 h-1 bg-white/30 rounded-full"></div>
+                                    <div className="w-full h-1 bg-white/40 rounded-full"></div>
+                                    <div className="w-2/3 h-1 bg-white/40 rounded-full"></div>
                                 </div>
                             </div>
                         </div>
@@ -128,19 +124,21 @@ export default function InteractiveSectionsRow() {
                 {/* Last Played Card */}
                 <div
                     onClick={() => setActiveModal('music')}
-                    className="group cursor-pointer rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 hover:shadow-lg transition-all hover:border-zinc-300 dark:hover:border-zinc-700 relative overflow-hidden"
+                    className="group cursor-pointer rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-6 hover:shadow-lg transition-all hover:border-zinc-300 dark:hover:border-zinc-700 relative overflow-hidden flex flex-col justify-center items-center h-full gap-8"
                 >
-                    <div className="flex justify-center mb-8">
-                        <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
-                            <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-                            </svg>
+                    <div className="flex justify-center">
+                        <div className="w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden shadow-md">
+                            <img
+                                src="/images/yt-music-logo-final.png"
+                                alt="Last Played"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </div>
                     <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-2">
-                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                            <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
                             </svg>
                             <p className="text-xs uppercase tracking-wide text-zinc-500 dark:text-zinc-400 font-semibold">LAST PLAYED</p>
                         </div>
@@ -296,38 +294,56 @@ export default function InteractiveSectionsRow() {
                             {/* MUSIC CONTENT */}
                             {activeModal === 'music' && (
                                 <div className="max-w-md mx-auto">
-                                    <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 text-white rounded-3xl p-8 shadow-xl">
-                                        <div className="aspect-square w-full rounded-2xl bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400 mb-8 flex items-center justify-center shadow-lg">
-                                            <svg className="w-24 h-24 text-white/90" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-                                            </svg>
+                                    <div className="bg-zinc-900 text-white rounded-3xl p-8 shadow-xl">
+                                        <div className="aspect-square w-full rounded-md mb-8 flex items-center justify-center shadow-lg relative overflow-hidden group bg-black">
+                                            <img
+                                                src="/images/apple-music-final.png"
+                                                alt="Strawberries & Cigarettes Album Art"
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
-                                        <div className="space-y-1 mb-8">
+                                        <div className="space-y-1 mb-6 text-center">
                                             <h3 className="text-2xl font-bold truncate">Strawberries & Cigarettes</h3>
                                             <p className="text-zinc-400 text-lg">Troye Sivan</p>
                                             <p className="text-zinc-500 text-sm uppercase tracking-wider font-medium">Blue Neighbourhood</p>
                                         </div>
 
-                                        <div className="space-y-4">
+                                        <div className="space-y-6">
                                             {/* Progress Bar */}
-                                            <div className="w-full bg-zinc-700/50 rounded-full h-1.5 overflow-hidden">
-                                                <div className="bg-white w-2/3 h-full rounded-full"></div>
+                                            <div className="w-full bg-zinc-700/50 rounded-full h-1 cursor-pointer group">
+                                                <div className="bg-white w-2/3 h-full rounded-full group-hover:bg-red-500 transition-colors relative">
+                                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 shadow-md"></div>
+                                                </div>
                                             </div>
-                                            <div className="flex justify-between text-xs text-zinc-500 font-medium font-mono">
+                                            <div className="flex justify-between text-xs text-zinc-500 font-medium font-mono px-1">
                                                 <span>2:14</span>
                                                 <span>3:21</span>
                                             </div>
 
                                             {/* Controls */}
-                                            <div className="flex items-center justify-center gap-8 pt-4">
+                                            <div className="flex items-center justify-center gap-10">
                                                 <button className="text-zinc-400 hover:text-white transition-colors">
                                                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" /></svg>
                                                 </button>
-                                                <button className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform">
+                                                <button className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform shadow-lg shadow-white/10">
                                                     <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                                                 </button>
                                                 <button className="text-zinc-400 hover:text-white transition-colors">
                                                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" /></svg>
+                                                </button>
+                                            </div>
+
+                                            {/* Extra Controls */}
+                                            <div className="flex justify-between px-4 pt-2">
+                                                <button className="text-zinc-500 hover:text-zinc-300 transition-colors">
+                                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                                                    </svg>
+                                                </button>
+                                                <button className="text-zinc-500 hover:text-zinc-300 transition-colors">
+                                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+                                                    </svg>
                                                 </button>
                                             </div>
                                         </div>

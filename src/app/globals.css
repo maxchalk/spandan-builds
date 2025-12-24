@@ -1,4 +1,10 @@
 @import "tailwindcss";
+
+/* Hide Next.js Dev Tools */
+nextjs-portal {
+  display: none !important;
+}
+
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
