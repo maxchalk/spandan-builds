@@ -1,13 +1,44 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import Section from '@/components/Section';
 
 export default function ContactSection() {
     const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [emailError, setEmailError] = useState<string | null>(null);
+
+    const validateEmail = (email: string) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    };
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+
+        // Clear error when user types in email field
+        if (name === 'email') {
+            setEmailError(null);
+        }
+
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!validateEmail(formData.email)) {
+            setEmailError('Please enter a valid email address.');
+            return;
+        }
+
         setSubmitted(true);
     };
 
@@ -88,8 +119,11 @@ export default function ContactSection() {
                                     type="text"
                                     id="name"
                                     name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="Spandan Kumar"
                                     required
-                                    className="w-full px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent text-zinc-900 dark:text-zinc-100"
+                                    className="w-full px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600"
                                 />
                             </div>
 
@@ -101,27 +135,48 @@ export default function ContactSection() {
                                     Email
                                 </label>
                                 <input
-                                    type="email"
+                                    type="text"
                                     id="email"
                                     name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    placeholder="venkateshspandan@gmail.com"
                                     required
-                                    className="w-full px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent text-zinc-900 dark:text-zinc-100"
+                                    className={`w-full px-4 py-2 bg-white dark:bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 ${emailError
+                                            ? 'border-red-500 focus:ring-red-500'
+                                            : 'border-zinc-300 dark:border-zinc-800 focus:ring-zinc-900 dark:focus:ring-zinc-100'
+                                        }`}
                                 />
+                                {emailError && (
+                                    <p className="mt-1 text-sm text-red-500">{emailError}</p>
+                                )}
                             </div>
 
                             <div>
-                                <label
-                                    htmlFor="message"
-                                    className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
-                                >
-                                    Message
-                                </label>
+                                <div className="flex justify-between items-center mb-2">
+                                    <label
+                                        htmlFor="message"
+                                        className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                                    >
+                                        Message
+                                    </label>
+                                    <span className={`text-xs ${formData.message.length >= 1000
+                                            ? 'text-red-500 font-medium'
+                                            : 'text-zinc-400'
+                                        }`}>
+                                        {formData.message.length}/1000
+                                    </span>
+                                </div>
                                 <textarea
                                     id="message"
                                     name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    placeholder="How can I help you?"
                                     required
                                     rows={4}
-                                    className="w-full px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent resize-none text-zinc-900 dark:text-zinc-100"
+                                    maxLength={1000}
+                                    className="w-full px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent resize-none text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600"
                                 />
                             </div>
 
