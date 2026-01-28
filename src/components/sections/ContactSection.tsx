@@ -143,8 +143,8 @@ export default function ContactSection() {
                                     placeholder="venkateshspandan@gmail.com"
                                     required
                                     className={`w-full px-4 py-2 bg-white dark:bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 ${emailError
-                                            ? 'border-red-500 focus:ring-red-500'
-                                            : 'border-zinc-300 dark:border-zinc-800 focus:ring-zinc-900 dark:focus:ring-zinc-100'
+                                        ? 'border-red-500 focus:ring-red-500'
+                                        : 'border-zinc-300 dark:border-zinc-800 focus:ring-zinc-900 dark:focus:ring-zinc-100'
                                         }`}
                                 />
                                 {emailError && (
@@ -161,8 +161,8 @@ export default function ContactSection() {
                                         Message
                                     </label>
                                     <span className={`text-xs ${formData.message.length >= 1000
-                                            ? 'text-red-500 font-medium'
-                                            : 'text-zinc-400'
+                                        ? 'text-red-500 font-medium'
+                                        : 'text-zinc-400'
                                         }`}>
                                         {formData.message.length}/1000
                                     </span>
@@ -189,7 +189,7 @@ export default function ContactSection() {
                         </form>
                     )}
                 </div>
-            </div>
-        </Section>
+            </div >
+        </Section >
     );
 }
