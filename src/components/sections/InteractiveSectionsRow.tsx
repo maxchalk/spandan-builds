@@ -325,9 +325,14 @@ export default function InteractiveSectionsRow() {
                                                 <button className="text-zinc-400 hover:text-white transition-colors">
                                                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" /></svg>
                                                 </button>
-                                                <button className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform shadow-lg shadow-white/10">
+                                                <a
+                                                    href="https://music.youtube.com/watch?v=Mw5mAozjC6M&si=GZBPdKegnymSauza"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform shadow-lg shadow-white/10"
+                                                >
                                                     <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                                                </button>
+                                                </a>
                                                 <button className="text-zinc-400 hover:text-white transition-colors">
                                                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" /></svg>
                                                 </button>
