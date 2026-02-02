@@ -69,7 +69,7 @@ export default function InteractiveSectionsRow() {
         <Section
             id="explore"
             title="My Site"
-            subtitle="Explore, experiment && say hello"
+            subtitle="Explore, experiment & say hello"
         >
             <div className="grid md:grid-cols-3 gap-6">
                 {/* Tools Card */}

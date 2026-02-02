@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Background from "@/components/Background";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import FixedControls from "@/components/FixedControls";
 
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50`}
       >
         <ThemeProvider
           attribute="class"
@@ -35,7 +36,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Background />
+          <div className="relative z-10">
+            {children}
+          </div>
           <FixedControls />
         </ThemeProvider>
       </body>

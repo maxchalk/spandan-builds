@@ -18,7 +18,8 @@ html {
 
 @layer base {
   body {
-    @apply bg-white text-zinc-900 transition-colors duration-300;
+    @apply text-zinc-900 transition-colors duration-300;
+    /* Background handled by Background.tsx now */
   }
 
   .dark body {
@@ -45,4 +46,79 @@ html {
 /* Ensure smooth transitions for all themed elements */
 * {
   @apply transition-colors duration-300 border-zinc-200 dark:border-zinc-800;
+}
+
+@layer utilities {
+  .animate-blob {
+    animation: blob 20s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(300px, -50px) scale(1.2);
+  }
+
+  66% {
+    transform: translate(-200px, 200px) scale(0.8);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* Star field generation using box-shadow for performance */
+.stars-container {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    10vw 10vh #FFF, 20vw 80vh #FFF, 80vw 10vh #FFF, 94vw 87vh #FFF,
+    30vw 30vh #FFF, 15vw 45vh #FFF, 60vw 60vh #FFF, 45vw 20vh #FFF,
+    70vw 90vh #FFF, 50vw 50vh #FFF, 10vw 90vh #FFF, 90vw 20vh #FFF,
+    25vw 70vh #FFF, 85vw 35vh #FFF, 55vw 15vh #FFF, 40vw 85vh #FFF,
+    5vw 55vh #FFF, 75vw 5vh #FFF, 35vw 95vh #FFF, 95vw 40vh #FFF,
+    65vw 25vh #FFF, 12vw 65vh #FFF, 88vw 75vh #FFF, 42vw 42vh #FFF,
+    8vw 28vh #FFF, 92vw 12vh #FFF, 18vw 92vh #FFF, 78vw 58vh #FFF,
+    32vw 18vh #FFF, 58vw 82vh #FFF, 48vw 32vh #FFF, 82vw 48vh #FFF,
+    22vw 52vh #FFF, 72vw 22vh #FFF, 38vw 78vh #FFF, 98vw 8vh #FFF,
+    2vw 98vh #FFF, 52vw 2vh #FFF, 84vw 68vh #FFF, 16vw 36vh #FFF,
+    62vw 88vh #FFF, 46vw 16vh #FFF, 86vw 62vh #FFF, 26vw 46vh #FFF,
+    68vw 38vh #FFF, 14vw 84vh #FFF, 96vw 54vh #FFF, 34vw 6vh #FFF,
+    76vw 94vh #FFF, 4vw 72vh #FFF, 64vw 14vh #FFF, 24vw 64vh #FFF,
+    54vw 96vh #FFF, 6vw 24vh #FFF, 93vw 33vh #FFF, 36vw 56vh #FFF,
+    44vw 66vh #FFF, 28vw 86vh #FFF, 74vw 12vh #FFF, 11vw 34vh #FFF,
+    59vw 44vh #FFF, 81vw 76vh #FFF, 31vw 21vh #FFF, 19vw 69vh #FFF,
+    49vw 89vh #FFF, 99vw 3vh #FFF, 3vw 97vh #FFF, 69vw 19vh #FFF;
+  animation: stars-twinkle 50s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes stars-twinkle {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-1000px);
+    opacity: 0.6;
+  }
 }
