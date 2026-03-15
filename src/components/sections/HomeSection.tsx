@@ -1,3 +1,5 @@
+import WorkAnimation from '../WorkAnimation';
+
 export default function HomeSection() {
     return (
         <section id="home" className="scroll-mt-24 py-20 sm:py-24">
@@ -32,16 +34,12 @@ export default function HomeSection() {
                     </div>
                 </div>
 
-                {/* Right Column - Animation Placeholder */}
-                <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 p-6">
-                    <div className="aspect-[4/3] bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
-                        <p className="text-sm text-zinc-500 dark:text-zinc-400 text-center px-4">
-                            Animation placeholder<br />
-                            (desk → bed → couch scenes)
-                        </p>
-                    </div>
+                {/* Right Column - Work Animation */}
+                <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 p-3">
+                    <WorkAnimation />
                 </div>
             </div>
         </section>
     );
 }
+
