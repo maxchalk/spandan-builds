@@ -1,7 +1,7 @@
 import Section from '@/components/Section';
 import {
     FaJava, FaPython, FaReact, FaAngular, FaNodeJs, FaDocker,
-    FaGitAlt, FaJira, FaSlack, FaAws
+    FaGitAlt, FaJira, FaSlack
 } from 'react-icons/fa';
 import {
     SiGo, SiJavascript, SiTypescript, SiCplusplus, SiC,

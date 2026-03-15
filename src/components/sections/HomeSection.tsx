@@ -15,7 +15,7 @@ export default function HomeSection() {
                     </h1>
 
                     <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
-                        This is my personal space to share what I've built, what I'm good at, and how I work.
+                        This is my personal space to share what I&apos;ve built, what I&apos;m good at, and how I work.
                     </p>
 
                     <div className="flex flex-wrap gap-4">

@@ -4,10 +4,11 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 export default function Background() {
-    const { theme, resolvedTheme } = useTheme();
+    const { resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
     }, []);
 

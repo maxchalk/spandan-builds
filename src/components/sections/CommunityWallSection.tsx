@@ -80,7 +80,7 @@ export default function CommunityWallSection() {
                         className={`p-5 rounded-2xl border ${comment.color} hover:shadow-md transition-shadow`}
                     >
                         <p className="text-zinc-900 font-medium mb-4 leading-relaxed">
-                            "{comment.message}"
+                            &quot;{comment.message}&quot;
                         </p>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">

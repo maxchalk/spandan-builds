@@ -3,17 +3,7 @@
 import { useState, useEffect } from 'react';
 import Section from '@/components/Section';
 
-const tools = [
-    { name: 'Windsurf', icon: '🌊' },
-    { name: 'Google Antigravity', icon: '🚀' },
-    { name: 'VS Code', icon: '💻' },
-    { name: 'ChatGPT', icon: '🤖' },
-    { name: 'Claude', icon: '🧠' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'Figma', icon: '🎨' },
-    { name: 'Notion', icon: '📝' },
-    { name: 'Linear', icon: '📊' },
-];
+
 
 const sampleComments = [
     {
@@ -215,7 +205,7 @@ export default function InteractiveSectionsRow() {
                                                 </div>
 
                                                 <div className="flex flex-wrap gap-2">
-                                                    <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">14" 2.8K OLED</span>
+                                                    <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">14&quot; 2.8K OLED</span>
                                                     <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">Snapdragon X Elite</span>
                                                     <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">16GB RAM</span>
                                                     <span className="px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-[11px] font-bold text-zinc-600 uppercase tracking-wide">1TB SSD</span>
@@ -275,7 +265,7 @@ export default function InteractiveSectionsRow() {
                                     <div className="columns-1 md:columns-2 gap-4 space-y-4">
                                         {sampleComments.map((comment) => (
                                             <div key={comment.id} className={`break-inside-avoid p-6 rounded-2xl border ${comment.color}`}>
-                                                <p className="text-lg font-medium mb-4 leading-relaxed">"{comment.message}"</p>
+                                                <p className="text-lg font-medium mb-4 leading-relaxed">&quot;{comment.message}&quot;</p>
                                                 <div className="flex justify-between items-center text-sm opacity-80">
                                                     <span className="font-semibold">{comment.author}</span>
                                                     <span>{comment.date}</span>

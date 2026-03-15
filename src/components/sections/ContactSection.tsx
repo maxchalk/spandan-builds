@@ -103,7 +103,7 @@ export default function ContactSection() {
                     {submitted ? (
                         <div className="rounded-2xl border border-green-200 dark:border-green-900/50 bg-green-50 dark:bg-green-900/20 p-6">
                             <p className="text-green-800 dark:text-green-300">
-                                Thanks for reaching out. I'll get back to you soon.
+                                Thanks for reaching out. I&apos;ll get back to you soon.
                             </p>
                         </div>
                     ) : (

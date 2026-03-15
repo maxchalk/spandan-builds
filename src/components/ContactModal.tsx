@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent } from 'react';
 
 interface ContactModalProps {
     isOpen: boolean;
@@ -111,7 +111,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                 <div className="text-center py-12">
                                     <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 dark:text-green-400 text-2xl">✓</div>
                                     <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">Message Sent!</h3>
-                                    <p className="text-zinc-500 text-sm">I'll get back to you as soon as possible.</p>
+                                    <p className="text-zinc-500 text-sm">I&apos;ll get back to you as soon as possible.</p>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-4">
