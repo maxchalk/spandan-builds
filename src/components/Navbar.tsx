@@ -8,7 +8,6 @@ const navLinks = [
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
     { href: '#education', label: 'Education' },
-    { href: '#contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -76,7 +75,7 @@ export default function Navbar() {
                         </button>
                     </div>
                 </div>
-            </nav >
+            </nav>
 
             <ContactModal
                 isOpen={isContactOpen}
