@@ -123,7 +123,7 @@ npm run start
 - [ ] Add project detail pages/modals
 - [ ] Connect GitHub repository links
 - [ ] Add blog section
-- [ ] Implement dark mode toggle
+- [ ] Implement dark mode toggle.
 
 ## 📄 License
 
